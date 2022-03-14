@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora </title>
+    <link rel="icon" href="cal.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm-8">
+                <div class="card">
+                    <div class="card-header bg-dark">
+                        <h3 class="text-center text-white">
+                            Calculadora
+                        </h3>
+                    </div>
+                    <div class="card-body bg-secondary">
+                        <input type="text" class="form-control" placeholder="Calculadora" id="value">
+
+                        <div class="container-fluid my-2">
+                            <div class="row">
+                               
+                                <div class="col-lg-3">
+
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(1)">1</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(2)">2</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(3)">3</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(4)">4</button>
+
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(5)">5</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(6)">6</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(7)">7</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(8)">8</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(9)">9</button>
+
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(0)" >0</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(0),writeN(0)" >00</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(&#39;.&#39;)">.</button>
+                                    
+                                   
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(&#39;+&#39;)">+</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(&#39;-&#39;)">-</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(&#39;*&#39;)">X</button>
+                                    
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(&#39;/&#39;)">/</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="potencia(inputValue.value)">^</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="raiz(inputValue.value)">√</button>
+
+                                    <button type="button" class="btn btn-primary my-1" onClick="writeN(Math.PI)">π</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN((1+(Math.sqrt(5)))/2)">φ</button>
+
+                                    <button type="button" class="btn btn-primary my-1" onClick="porcentaje(inputValue.value)">%</button>
+                                    <button type="button" class="btn btn-primary my-1" onclick="writeN(Math.E)">e</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="abs(inputValue.value)">abs</button>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-primary my-1" onClick="trigonometria(Math.sin)">Sin</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="trigonometria(Math.asin)">Asin</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="writeN(&#39;(&#39;)">(</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="writeN(&#39;)&#39;)">)</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="trigonometria(Math.cos)">Cos</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="trigonometria(Math.acos)">Acos</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="trigonometria(Math.tan)">Tan</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="trigonometria(Math.atan)">Atan</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="logF(inputValue.value)">Log</button>
+                                    <button type="button" class="btn btn-primary my-1" onClick="writeN('&#101;'+prompt('Ingrese el exponente de 10',''))">x10</button>
+
+                                    <button class="btn btn-success btn-block my-3" onClick="total(inputValue.value)">=</button>
+                                    <button type="button" class="btn btn-light btn-block my-1" onclick="clearNumber()">CE</button>
+
+
+                                </div>
+                                
+                            </div>
+
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
